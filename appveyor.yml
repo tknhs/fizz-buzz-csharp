@@ -11,5 +11,16 @@ build:
   project: FizzBuzz.sln
   verbosity: minimal
 
+after_build:
+- dotnet pack src/FizzBuzz -c %CONFIGURATION% --no-build
+
 test_script:
 - dotnet test ./test/FizzBuzz.Tests
+
+deploy:
+- provider: NuGet
+  server: https://ci.appveyor.com/nuget/tknhs/api/v2/package
+  api_key:
+    secure: dEwVkKNIsCzeT9IZvMVnfTQuQVykh9xeQDzfJGfBI9U=
+  skip_symbols: true
+  artifact: /.*\.nupkg/
