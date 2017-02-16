@@ -12,10 +12,13 @@ build:
   verbosity: minimal
 
 after_build:
-- dotnet pack src/FizzBuzz -c %CONFIGURATION% --no-build
+- dotnet pack src/FizzBuzz -c %CONFIGURATION% --no-build -o artifacts
 
 test_script:
 - dotnet test ./test/FizzBuzz.Tests
+
+artifacts:
+- path: artifacts\**\*.*
 
 deploy:
 - provider: NuGet
