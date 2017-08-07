@@ -1,20 +1,17 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio 15
+VisualStudioVersion = 15.0.26430.16
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{93CBF1AD-6C89-4A5D-8199-7FB100572B73}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{11B38506-210C-4F94-842A-BCEC4E276789}"
-	ProjectSection(SolutionItems) = preProject
-		global.json = global.json
-	EndProjectSection
-EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "FizzBuzz", "src\FizzBuzz\FizzBuzz.xproj", "{0258991B-A639-4929-A980-5F0DB56CC6B5}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{9CEFF4ED-57E8-4DC1-8038-54947267846B}"
 EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "FizzBuzz.Tests", "test\FizzBuzz.Tests\FizzBuzz.Tests.xproj", "{22277138-B89D-4191-AA41-0352968CE28F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FizzBuzz", "src\FizzBuzz\FizzBuzz.csproj", "{0258991B-A639-4929-A980-5F0DB56CC6B5}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FizzBuzz.Tests", "test\FizzBuzz.Tests\FizzBuzz.Tests.csproj", "{22277138-B89D-4191-AA41-0352968CE28F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
