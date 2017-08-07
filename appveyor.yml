@@ -1,7 +1,15 @@
-image: Visual Studio 2015
+image: Visual Studio 2017
 
 configuration: Release
 platform: Any CPU
+
+environment:
+  nuget_user: user
+  nuget_password:
+    secure: JUwUVp6cuvFvLgLpkA6XUg==
+
+nuget:
+  account_feed: true
 
 before_build:
 - nuget restore
@@ -15,10 +23,7 @@ after_build:
 - dotnet pack src/FizzBuzz -c %CONFIGURATION% --no-build -o artifacts
 
 test_script:
-- dotnet test ./test/FizzBuzz.Tests
-
-after_test:
-- ps: (New-Object Net.WebClient).UploadFile("https://ci.appveyor.com/api/testresults/nunit3/$($env:APPVEYOR_JOB_ID)", (Resolve-Path .\TestResult.xml))
+- nunit3-console.exe ./test/FizzBuzz.Tests/bin/Release/net461/FizzBuzz.Tests.dll --result=myresults.xml;format=AppVeyor
 
 artifacts:
 - path: artifacts\**\*.*
