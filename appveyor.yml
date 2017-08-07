@@ -15,9 +15,8 @@ before_build:
 - nuget restore
 - dotnet restore
 
-build:
-  project: FizzBuzz.sln
-  verbosity: minimal
+build_script:
+- msbuild FizzBuzz.sln /t:build /p:configuration=%CONFIGURATION% /p:platform=AnyCPU
 
 after_build:
 - dotnet pack src/FizzBuzz -c %CONFIGURATION% --no-build -o artifacts
