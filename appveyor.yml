@@ -5,17 +5,6 @@ image: Visual Studio 2017
 configuration: Release
 platform: Any CPU
 
-environment:
-  nuget_user: user
-  nuget_password:
-    secure: JUwUVp6cuvFvLgLpkA6XUg==
-
-install:
-- nuget sources add -Name MyAccountFeed -Source https://ci.appveyor.com/nuget/tknhs -UserName %nuget_user% -Password %nuget_password%
-
-nuget:
-  account_feed: true
-
 before_build:
 - nuget restore
 - dotnet restore
