@@ -11,7 +11,7 @@ environment:
     secure: JUwUVp6cuvFvLgLpkA6XUg==
 
 install:
-- nuget sources add -Name AccountFeed -Source https://ci.appveyor.com/nuget/tknhs -UserName %nuget_user% -Password %nuget_password%
+- nuget sources add -Name MyAccountFeed -Source https://ci.appveyor.com/nuget/tknhs -UserName %nuget_user% -Password %nuget_password%
 
 nuget:
   account_feed: true
