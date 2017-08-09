@@ -1,3 +1,5 @@
+version: '1.0.{build}'
+
 image: Visual Studio 2017
 
 configuration: Release
@@ -19,7 +21,13 @@ build_script:
 - msbuild FizzBuzz.sln /t:build /p:configuration=%CONFIGURATION% /p:Platform="Any CPU"
 
 after_build:
-- nuget pack FizzBuzz.nuspec -OutputDirectory artifacts
+- ps: |
+    (ls $env:APPVEYOR_BUILD_FOLDER -Recurse).Where{ $_.Extension -eq ".nuspec" }.ForEach{
+      [xml]$xml = Get-Content $_.FullName
+      $xml.package.metadata.version = $env:APPVEYOR_BUILD_VERSION
+      $xml.Save($_.FullName)
+    }
+    nuget pack FizzBuzz.nuspec -OutputDirectory artifacts
 
 test_script:
 - nunit3-console.exe ./test/FizzBuzz.Tests/bin/Release/net461/FizzBuzz.Tests.dll --result=myresults.xml;format=AppVeyor
