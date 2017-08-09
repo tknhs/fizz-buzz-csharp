@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>FizzBuzz</id>
+    <version>1.0.0</version>
+    <authors>tknhs</authors>
+    <owners>tknhs</owners>
+    <projectUrl>https://github.com/tknhs/fizz-buzz-csharp</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>fizz-buzz-csharp</description>
+    <copyright>Copyright 2017</copyright>
+  </metadata>
+  <files>
+    <file src="src\FizzBuzz\bin\Release\net461\FizzBuzz.dll" target="lib\net461\" />
+    <file src="src\FizzBuzz\bin\Release\net461\FizzBuzz.pdb" target="lib\net461\" />
+    <file src="src\FizzBuzz\bin\Release\netcoreapp1.0\FizzBuzz.dll" target="lib\netcoreapp1.0\" />
+    <file src="src\FizzBuzz\bin\Release\netcoreapp1.0\FizzBuzz.pdb" target="lib\netcoreapp1.0\" />
+    <file src="src\FizzBuzz\bin\Release\netstandard1.6\FizzBuzz.dll" target="lib\netstandard1.6\" />
+    <file src="src\FizzBuzz\bin\Release\netstandard1.6\FizzBuzz.pdb" target="lib\netstandard1.6\" />
+  </files>
+</package>

@@ -11,15 +11,15 @@ environment:
 nuget:
   account_feed: true
 
-build:
-  publish_nuget: true
-
 before_build:
 - nuget restore
 - dotnet restore
 
 build_script:
 - msbuild FizzBuzz.sln /t:build /p:configuration=%CONFIGURATION% /p:Platform="Any CPU"
+
+after_build:
+- nuget pack FizzBuzz.nuspec -OutputDirectory artifacts
 
 test_script:
 - nunit3-console.exe ./test/FizzBuzz.Tests/bin/Release/net461/FizzBuzz.Tests.dll --result=myresults.xml;format=AppVeyor
